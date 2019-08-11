@@ -1,28 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-header></app-header>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppHeader from "./components/Header";
+import Quiz from "./components/Quiz.vue";
+import Question from "./components/Question.vue";
+import AddQuestion from "./components/AddQuestion.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    quiz: Quiz,
+    question: Question,
+    "add-question": AddQuestion,
+    "app-header": AppHeader
+  },
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-image: url('./assets/question-marks-bcg.jpg');
+  }
+
+  #app {
+    background-color: rgba(223,240,234, 0.9);
+    width: 75%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-radius: 50px;
+  }
 </style>
